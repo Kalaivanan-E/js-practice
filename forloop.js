@@ -14,3 +14,11 @@ let num =5;
 for(i=1; i<=10; i++){
     console.log(num, "X", i, "=", num * i);
 }
+
+let number =5;
+for( i=1; i<=5; i++){
+    for(j=1; j<=i; j++){
+        console.log("* ");
+    }
+    console.log("\n");
+}
