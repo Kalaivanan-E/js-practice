@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Events</title>
+    <script src="./data.js"type="text/Javascript"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="Heading">
+        <h1> Javascript Events</h1>
+     </div>
+<div class="events1"> 
+    
+     <div>
+     <label style="font-weight: bold; font-size: 25px;" > OnMouseover:</label> <br>
+     <label> mouse over to change button background color</label><br>
+     <button id="one"  onmouseover="display()" style="background-color: greenyellow; height: 40px; width: 180px; color:rgb(11, 3, 3); font-style:italic; font-size: 16px; font-weight: bold;" > Mouse over</button>
+     </div> <br><br>
+     
+    <div>
+     <label style="font-weight: bold; font-size: 25px;"> OnMouseout:</label> <br>
+     <label> mouse over to change button background color</label><br>
+     <button id ="two"  height: 100px; width: 150px; onmouseout="display1()"  style="background-color:greenyellow; height: 40px; width: 180px; color:black; font-style:italic; font-size: 16px; font-weight: bold;"> Mouse out</button>
+     </div> <br><br>
+
+     <div>
+      <label style="font-weight: bold; font-size: 25px;"> OnClick:</label> <br>
+     <label> Click to change button background color</label><br> 
+    <button  id="three" height: 30px; width: 150px; onclick="Onclick()"  style="background-color: greenyellow; height: 40px; width: 180px; color:black; font-style:italic; font-size: 16px; font-weight: bold;"> onclick</button>
+     </div>  <br><br>
+ </div>
+
+<div class="events2"> 
+     <div>
+      <label style="font-weight: bold; font-size: 25px;"> Ondblclick:</label> <br>
+     <label> Double click to change button background color</label><br>
+      <button  id="four" height: 30px; width: 150px; ondblclick="Ondbclick()"  style="background-color: greenyellow; height: 40px; width: 180px; color:black; font-style:italic; font-size: 16px; font-weight: bold;"> Ondblclick</button>
+     </div>  <br><br>
+
+     <div>
+     <label style="font-weight: bold; font-size: 25px;"> Onfocus:</label> <br>
+     <label> Click to change input background color</label><br>
+     
+      <input type="text" id="five" height="30px" width="150px" onfocus="changeBgcolor()"  style="background-color: greenyellow; height: 40px; width: 180px; color:black; font-style:italic; font-size: 16px; font-weight: bold;">
+     </div>  <br><br>
+
+     <div>
+     <label style="font-weight: bold; font-size: 25px;"> Onblur:</label> <br>
+     <label> change Lower case to upper case onblur Events</label><br>
+     
+      <input type="text" id="six" height="30px" width="150px" onblur="toUpperCase()" style="background-color: greenyellow; height: 40px; width: 180px; color:black; font-style:italic; font-size: 16px; font-weight: bold;">
+     </div>  <br><br>
+</div>
+
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+.events1{
+    
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    gap: 50px 100px;
+    padding: 50px;
+    margin: 20px;
+    row-gap: 50px;
+    justify-content: space-between;
+}
+
+.events2{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    gap: 50px 100px;
+    padding: 50px;
+    margin: 20px;
+    row-gap: 50px;
+    justify-content: space-between  ;
+}
+
+
+.Heading{
+    text-align: center;
+}
+
+
+body{
+    background-colo : ;
+}
+
