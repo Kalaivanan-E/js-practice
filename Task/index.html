@@ -1,66 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Reg form</title>
+  <title>Table Pagination with JavaScript</title>
 </head>
 <body>
-    <div class ="container">
-        <div class="title">Registration</div>
-        <form action="#">
-            <div class="user-details">
-                <div class="input box">
-                    <span class="details">Full name</span>
-                    <input type="text" placeholder="Enter your name" required>
-                </div>
-                <div class="input box">
-                    <span class="details">Username</span>
-                    <input type="text" placeholder="Enter your username" required>
-                </div>
-                <div class="input box">
-                    <span class="details">Email</span>
-                    <input type="email" placeholder="Enter your email" required>
-                </div>
-                <div class="input box">
-                    <span class="details">Phone number</span>
-                    <input type="number" placeholder="Enter your Phonenumber" required>
-                </div>
-                <div class="input box">
-                    <span class="details">Password</span>
-                    <input type="password" placeholder="Enter your password" required>
-                </div>
-                <div class="input box">
-                    <span class="details">confirm password</span>
-                    <input type="password" placeholder="confirm password" required>
-                </div>
-            </div>
-            <div class="gender-details">
-                <span class="gender-title">Gender</span>
-                <div class="category">
-                    <label for="">
-                        <span class="dot one"></span>
-                        <span class="gender">Male</span>
-                    </label>
-                    <label for="">
-                        <span class="dot one"></span>
-                        <span class="gender">Female</span>
-                    </label>
-                    <label for="">
-                        <span class="dot one"></span>
-                        <span class="gender">Prefer not to say</span>
-                    </label>
-                </div>
-            </div>
 
-            <div class="button">
-                <input type="submit" value="Register">
-            </div>
+<h2>Paginated Table (20 Rows Per Page)</h2>
 
-        </form>
+<table border="1" id="data-table">
+  <thead>
+    <tr>
+      <th>EID</th>
+      <th>EName</th>
+    </tr>
+  </thead>
+  <tbody id="table-body">
+    <!-- Rows will be inserted by JavaScript -->
+  </tbody>
+</table>
 
-    </div>
-    
+<div id="pagination"></div>
+
+<script>
+  // Sample data: 100 users
+// Use the sample data for the table
+const data = [
+  {"eid":1,"ename":"Serena","gender":"Kennet"},
+  {"eid":2,"ename":"Karie","gender":"Domleo"},
+  {"eid":3,"ename":"Agnese","gender":"Whybrow"},
+  {"eid":4,"ename":"Dinny","gender":"Bodechon"},
+  {"eid":5,"ename":"Rolland","gender":"Alam"},
+  {"eid":6,"ename":"Matelda","gender":"Waulker"},
+  {"eid":7,"ename":"Jorry","gender":"Turrell"},
+  {"eid":8,"ename":"Ferguson","gender":"Trewhitt"},
+  {"eid":9,"ename":"Sianna","gender":"Thaim"},
+  {"eid":10,"ename":"Guglielma","gender":"De Gregoli"},
+  {"eid":11,"ename":"Hanan","gender":"Firle"},
+  {"eid":12,"ename":"Ephraim","gender":"Strainge"},
+  {"eid":13,"ename":"Lemuel","gender":"Esslement"},
+  {"eid":14,"ename":"Sybilla","gender":"Allsebrook"},
+  {"eid":15,"ename":"Alissa","gender":"Bridgstock"},
+  {"eid":16,"ename":"Mehetabel","gender":"Kenzie"},
+  {"eid":17,"ename":"Kamila","gender":"Give"},
+  {"eid":18,"ename":"Eliza","gender":"Benninger"},
+  {"eid":19,"ename":"Cecilius","gender":"Trass"},
+  {"eid":20,"ename":"Danyelle","gender":"Jostan"},
+  {"eid":21,"ename":"Nanny","gender":"Mapston"},
+  {"eid":22,"ename":"Dennie","gender":"Kilbee"},
+  {"eid":23,"ename":"Risa","gender":"Matveiko"},
+  {"eid":24,"ename":"Annabella","gender":"Lucius"},
+  {"eid":25,"ename":"Kellby","gender":"Avramow"},
+  {"eid":26,"ename":"Arabele","gender":"Duffin"},
+  {"eid":27,"ename":"Natasha","gender":"Waszczykowski"},
+  {"eid":28,"ename":"Demetrius","gender":"Coviello"},
+  {"eid":29,"ename":"Lorne","gender":"Wilfing"},
+  {"eid":30,"ename":"Amity","gender":"Brusle"},
+  {"eid":31,"ename":"Emlyn","gender":"Wimlett"},
+  {"eid":32,"ename":"Haroun","gender":"Dodsley"},
+  {"eid":33,"ename":"Irina","gender":"Tubble"},
+  {"eid":34,"ename":"Jehu","gender":"MacKibbon"},
+  {"eid":35,"ename":"Gabi","gender":"Admans"},
+  {"eid":36,"ename":"Fran","gender":"McAster"},
+  {"eid":37,"ename":"Roslyn","gender":"Wimlet"},
+  {"eid":38,"ename":"Carline","gender":"Scardafield"},
+  {"eid":39,"ename":"Heidie","gender":"Rother"},
+  {"eid":40,"ename":"Ailsun","gender":"Trenear"},
+  {"eid":41,"ename":"Antons","gender":"Taggerty"},
+  {"eid":42,"ename":"Quintilla","gender":"Bowe"},
+  {"eid":43,"ename":"Bernelle","gender":"Dunk"},
+  {"eid":44,"ename":"Pamella","gender":"Limbourne"},
+  {"eid":45,"ename":"Jodie","gender":"Jarrel"},
+  {"eid":46,"ename":"Rafaelita","gender":"Plet"},
+  {"eid":47,"ename":"Jed","gender":"Dunkley"},
+  {"eid":48,"ename":"Daryle","gender":"Mosconi"},
+  {"eid":49,"ename":"Claus","gender":"Benes"},
+  {"eid":50,"ename":"Vonnie","gender":"Hanlon"},
+  {"eid":51,"ename":"Quillan","gender":"Gittoes"},
+  {"eid":52,"ename":"Bea","gender":"Deeth"},
+  {"eid":53,"ename":"Pietra","gender":"Fidal"},
+  {"eid":54,"ename":"Colin","gender":"Bailes"},
+  {"eid":55,"ename":"Stewart","gender":"Yegoshin"},
+  {"eid":56,"ename":"Nataline","gender":"Adolfsen"},
+  {"eid":57,"ename":"Reynold","gender":"Celiz"},
+  {"eid":58,"ename":"Cyrus","gender":"Stirland"},
+  {"eid":59,"ename":"Paulita","gender":"Richarz"},
+  {"eid":60,"ename":"Tristan","gender":"Skene"},
+  {"eid":61,"ename":"Kissie","gender":"Rubinovitsch"},
+  {"eid":62,"ename":"Rhiamon","gender":"Brindley"},
+  {"eid":63,"ename":"Tobe","gender":"Tritton"},
+  {"eid":64,"ename":"Hebert","gender":"Henden"},
+  {"eid":65,"ename":"Roda","gender":"Plowes"},
+  {"eid":66,"ename":"Conroy","gender":"Vinter"},
+  {"eid":67,"ename":"Anestassia","gender":"Polleye"},
+  {"eid":68,"ename":"Chan","gender":"Caffery"},
+  {"eid":69,"ename":"Myles","gender":"Ellison"},
+  {"eid":70,"ename":"Hamel","gender":"Spraggs"},
+  {"eid":71,"ename":"Sabrina","gender":"Ingerson"},
+  {"eid":72,"ename":"Liv","gender":"Bockett"},
+  {"eid":73,"ename":"Dulcy","gender":"McCracken"},
+  {"eid":74,"ename":"Cori","gender":"Temple"},
+  {"eid":75,"ename":"Laverne","gender":"Abbett"},
+  {"eid":76,"ename":"Asia","gender":"Gumbley"},
+  {"eid":77,"ename":"Matti","gender":"Malamore"},
+  {"eid":78,"ename":"Nessy","gender":"MacDiarmid"},
+  {"eid":79,"ename":"Cybill","gender":"Gloyens"},
+  {"eid":80,"ename":"Cherie","gender":"Free"},
+  {"eid":81,"ename":"Teddy","gender":"Barchrameev"},
+  {"eid":82,"ename":"Alfons","gender":"O'Spillane"},
+  {"eid":83,"ename":"Christiane","gender":"Trayford"},
+  {"eid":84,"ename":"Catha","gender":"Texton"},
+  {"eid":85,"ename":"Yuma","gender":"Barnicott"},
+  {"eid":86,"ename":"Karney","gender":"Cavan"},
+  {"eid":87,"ename":"Bryna","gender":"Robrow"},
+  {"eid":88,"ename":"Sherry","gender":"Howat"},
+  {"eid":89,"ename":"Karleen","gender":"Blint"},
+  {"eid":90,"ename":"Si","gender":"Ginnaly"},
+  {"eid":91,"ename":"Gaylord","gender":"Albany"},
+  {"eid":92,"ename":"Odetta","gender":"Connah"},
+  {"eid":93,"ename":"Karole","gender":"Albury"},
+  {"eid":94,"ename":"Jone","gender":"Rubens"},
+  {"eid":95,"ename":"Merline","gender":"Karlowicz"},
+  {"eid":96,"ename":"Gussy","gender":"Cleator"},
+  {"eid":97,"ename":"Connie","gender":"Godfery"},
+  {"eid":98,"ename":"Agnes","gender":"Enrique"},
+  {"eid":99,"ename":"Fleurette","gender":"Echlin"},
+  {"eid":100,"ename":"Hadlee","gender":"Trippitt"}
+];
+
+  const rowsPerPage = 20;
+  let currentPage = 1;
+
+  function displayTable(page) {
+    const tableBody = document.getElementById("table-body");
+    tableBody.innerHTML = ""; // Clear previous rows
+
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const pageData = data.slice(start, end);
+
+    for (let row of pageData) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${row.eid}</td><td>${row.ename}</td>`;
+      tableBody.appendChild(tr);
+    }
+    for (let row of pageData) {
+      const tr = document.createElement("tr");
+      // Use eid and ename from your sample data
+      tr.innerHTML = `<td>${row.eid}</td><td>${row.ename}</td>`;
+      tableBody.appendChild(tr);
+    }
+    paginationDiv.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.onclick = () => {
+        currentPage = i;
+        displayTable(currentPage);
+      };
+      paginationDiv.appendChild(btn);
+    }
+  }
+
+  // Initial Load
+  displayTable(currentPage);
+  setupPagination();
+</script>
+
 </body>
 </html>
