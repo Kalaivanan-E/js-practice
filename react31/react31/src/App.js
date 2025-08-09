@@ -1,4 +1,5 @@
-import Movies from "./Components/Movies";
+import CompA from "./Components/CompA";
+// import Movies from "./Components/Movies";
 
 
 let App = ()=>{
@@ -7,7 +8,7 @@ let App = ()=>{
 
        <h2> App components </h2>
 
-    <Movies/>       
+    <CompA/>       
 
     </div>
 
