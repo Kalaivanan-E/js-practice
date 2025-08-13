@@ -4,6 +4,7 @@
 
 import Product from "./Components/Product";
 import Message from "./Components/Message";
+import Products from "./Product/Products";
 
 
 let App = ()=>{
@@ -17,6 +18,7 @@ let App = ()=>{
 
        <Product/>
        <Message/>
+       <Products/>
 
     </div>
 
