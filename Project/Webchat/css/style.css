@@ -6,6 +6,15 @@
 
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+
+}
+
+.container{
+     width: 1000px;
+    min-height: 1000px ;
+    margin: 0 auto;
+
 
 }
 
@@ -46,5 +55,67 @@ nav  ul li a{
 #navbar{
     margin-left: 100px;
 }
+
+.banner{
+    width: 100%;
+    height: 500px;
+    background-image: url('../images/1.jpeg');
+}
+.page-header{
+    padding:  10px;
+    border-bottom: 1px solid teal;
+    color: teal;
+    font-size: 25px;
+    margin-bottom: 25px;
+
+}
+
+.frm{
+    width: 100%;
+}
+.frm label{
+    color: teal;
+    display: block;
+    margin-bottom: 15px;
+    
+}
+
+.frm input[type = 'text'],.frm input[type = 'password'],.frm input[type = 'email'],.frm input[type = 'number'], .frm select {
+
+    height: 30px; 
+    display: block;
+    margin-bottom: 15px;
+    width: 300px;
+     
+}
+
+.frm button{
+    height: 40px;
+     width: 100px ;     
+    background: teal;
+    color: white;
+    padding: 10px;
+    border: none;
+    line-height: 30px;
+}
+
+fieldset{
+    padding: 20px;
+    color: teal;
+    font-size: 15px;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+
+}
+
+legend{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+
 
 
