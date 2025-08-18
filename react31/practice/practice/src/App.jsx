@@ -1,13 +1,19 @@
-import Header from "./Components/Header";
 
 
+import React, { Component } from 'react';
+import Navbar from './Component/Navbar';
 
-function App(){
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <h2>App Components </h2>
+                <hr />
+                <Navbar/>
 
-
-    return (
-        <><div> App Components</div><Header /></>
-     );
+            </div>
+        );
+    }
 }
 
 export default App;
