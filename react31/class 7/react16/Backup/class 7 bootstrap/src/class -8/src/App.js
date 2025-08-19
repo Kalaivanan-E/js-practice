@@ -1,8 +1,6 @@
 import Employees from "./Navbar/Employees";
 import Navbar from "./Navbar/Navbar";
 
-import Users from './Users/Users'
-
 
 
 function App() {
@@ -10,9 +8,8 @@ function App() {
     <div>
       <h2>App components</h2>
       
-      {/* <Navbar/> */}
-      {/* <Employees/> */}
-      <Users/>
+      <Navbar/>
+      <Employees/>
     </div>
   );
 }
