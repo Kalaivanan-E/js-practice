@@ -11,8 +11,8 @@ function App() {
       <h2>App components</h2>
       
       <Navbar/>
-      {/* <Employees/> */}
-      <Users/>
+      <Employees/>
+      {/* <Users/> */}
     </div>
   );
 }
