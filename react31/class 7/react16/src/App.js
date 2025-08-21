@@ -1,7 +1,6 @@
-import Employees from "./Navbar/Employees";
-import Navbar from "./Navbar/Navbar";
+import Message from "./Message/Message";
 
-import Users from './Users/Users'
+
 
 
 
@@ -9,10 +8,11 @@ function App() {
   return (
     <div>
       <h2>App components</h2>
+
+      <Message/>
+
       
-      <Navbar/>
-      {/* <Employees/> */}
-      <Users/>
+     
     </div>
   );
 }

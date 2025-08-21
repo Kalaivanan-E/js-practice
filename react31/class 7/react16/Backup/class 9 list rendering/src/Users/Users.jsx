@@ -41,7 +41,7 @@ class Users extends React.Component{
                     {/* <button onClick={this.get_Data}>Get Data</button> */}
                     <table className="table table-bordered border-5 border-dark table-striped">
                         <thead class="table-dark">
-                        <tr>
+                        <tr >
                             <th>User Id</th>
                             <th>User Name</th>
                             <th>User Email</th>
