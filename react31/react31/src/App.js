@@ -1,17 +1,23 @@
-import CompA from "./Components/CompA";
-// import Movies from "./Components/Movies";
+import { BrowserRouter as Router} from "react-router-dom/cjs/react-router-dom.min";
+import Navbar from "./Navbar";
 
 
-let App = ()=>{
 
-    return <div>
 
-       <h2> App components </h2>
 
-    <CompA/>       
-
+function App() {
+  return (
+    <div>
+      <h2>App components</h2>
+    
+    <Router>
+      <Navbar/>
+    </Router>
+    
+      
+     
     </div>
-
+  );
 }
 
 export default App;
