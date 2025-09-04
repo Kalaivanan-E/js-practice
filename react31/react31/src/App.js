@@ -11,8 +11,9 @@ let App = ()=>{
 
   return <>
     <BrowserRouter>
-      <nav  className="navbar navbar-dark bg-primary navbar-expand-lg">
-      <NavLink to = "/index" id="nav" className="navbar-brand ">Logo</NavLink>
+      <nav  className="navbar navbar-dark bg-dark navbar-expand-lg" id="navbar">
+      {/* <NavLink to = "/index" id="nav" className="navbar-brand ">Logo</NavLink> */}
+     <NavLink to='/index'> <img id="img" src="https://static.vecteezy.com/system/resources/previews/011/853/549/original/technology-logo-design-template-free-vector.jpg" alt="image" /> </NavLink>
       <div className="ml-auto" id="menu">
         <ul className="navbar-nav">
           <li><NavLink to = '/index' className="nav-link  color-dark">Home</NavLink></li>

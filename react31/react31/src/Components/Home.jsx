@@ -1,7 +1,10 @@
 import React from 'react'
 import '../App.css'
+import { NavLink } from 'react-router';
 
  const Home = () => {
+   
+
   return (
     <div>
     <section className='homebg'>
@@ -23,8 +26,13 @@ import '../App.css'
                 </div>
             </div>
             <div>
+            <NavLink to = '/contact'>
                 <button className='button1'>Contact Me</button>
+            </NavLink>
+            <NavLink to = 'https://www.linkedin.com/in/kalaivananeswaran/'>
                 <button className='button2'>LinkedIn </button>
+            </NavLink>
+           
             </div>
         </div>
     </section>
