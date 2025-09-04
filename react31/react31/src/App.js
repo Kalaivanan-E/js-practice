@@ -1,34 +1,32 @@
-import { BrowserRouter as Router,Route,Switch} from "react-router-dom/cjs/react-router-dom.min";
-import Navbar from "./Navbar";
-import { About } from "./Component/About";
-import { Home } from "./Component/Home";
-import { Service } from "./Component/Service";
-import { Contact } from "./Component/Contact";
-import { Product } from "./Component/Product";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
+import Home from "./Components/Home"
+import About from "./Components/About"
+import Service from "./Components/Service"
+import Contact from "./Components/Contact"
 
+let App = ()=>{
 
-
-
-function App() {
-  return (
-    <div>
-      <h2>App components</h2>
-    
-    <Router>
-      <Navbar/>
-      <Switch>
-                <Route path="/about" component={About}/>
-                <Route path="/services" component={Service}/>
-                <Route path="/index" component={Home}/>
-                <Route path="/contact" component={Contact}/>
-                <Route path="/product" component={Product}/>
-              </Switch>
-    </Router>
-    
-      
-     
-    </div>
-  );
+  return <>
+    <BrowserRouter>
+      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+      <Link to = "/index" className="navbar-brand">Logo</Link>
+      <div className="ml-auto">
+        <ul className="navbar-nav">
+          <li><Link to = '/index' className="nav-link">Home</Link></li>
+          <li><Link to = '/about' className="nav-link">About</Link></li>
+          <li><Link to = '/service' className="nav-link">Service</Link></li>
+          <li><Link to = '/contact' className="nav-link">Contact</Link></li>
+        </ul>
+      </div>
+    </nav>
+    <Routes>
+      <Route path="/index" element = {<Home/>}/>
+      <Route path="/about" element = {<About/>}/>
+      <Route path="/service" element = {<Service/>}/>
+      <Route path="/contact" element = {<Contact/>}/>
+    </Routes>
+    </BrowserRouter>
+  </>
 }
 
-export default App;
+export default App
