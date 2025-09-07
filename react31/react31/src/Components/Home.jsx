@@ -1,10 +1,43 @@
 import React from 'react'
+import '../App.css'
+import { NavLink } from 'react-router';
 
  const Home = () => {
+   
+
   return (
-    <div>Home</div>
+    <div>
+    <section className='homebg'>
+        <div className="container" style={{marginTop:'80px', color:'white'}}>
+            <div className="row">
+                <div className="col-8" >
+                    <h4 className='Home'>Hello, my name is |</h4>
+                    <h2 className='name'> Kalaivanan E</h2>
+                    <h2 className='name'>I design and build</h2>
+                    <h2 className='name'>Meaningful experiences.</h2>
+                </div>
+                <div className="col-4">
+                    <img className='img' src="https://wallpapercave.com/wp/wp1877444.jpg" alt="techimg" />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-8">
+                    <p className='para'>I am a digital polymath - a constantly evolving digital creator dirven by a passion for lifelong learning and the desire to leave a lasting impact</p>
+                </div>
+            </div>
+            <div>
+            <NavLink to = '/contact'>
+                <button className='button1'>Contact Me</button>
+            </NavLink>
+            <NavLink to = 'https://www.linkedin.com/in/kalaivananeswaran/'>
+                <button className='button2'>LinkedIn </button>
+            </NavLink>
+           
+            </div>
+        </div>
+    </section>
+    </div>
   )
 }
 
-
-export default Home
+export default Home;
