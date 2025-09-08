@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        form{
+            width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        label{
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"] {
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <h2> Login Page</h2> -->
+
+    <form action="/index.html">
+        <div>
+            <legend> User Personal Information</legend>
+
+            <label>Enter your full name</label> <br>
+            <input type="text" placeholder="Enter your full name"><br>
+
+            <label>Enter your Email</label> <br>
+            <input type="email" placeholder="xyz@gmail.com"><br>
+
+            <label>Enter your Password</label> <br>
+            <input type="password" placeholder="Enter your password"><br>
+
+            <label>Confirm Password</label> <br>
+            <input type="text" placeholder="Re-Enter your password"><br>
+
+            <label > Enter your Gender</label> <br>
+            <input type="radio" value="Male"> 
+            <label> Male</label>
+            <input type="radio" value="Female">
+            <label> Female</label> 
+            <input type="radio" value="Other">
+            <label> Others</label> <br>
+
+            <label> Enter your DOB</label><br>            
+            <input type="date" > <br>
+
+            <label> Enter your Address</label> <br>
+            <textarea name="address"></textarea><br>
+
+            <input type="submit">
+        </div>
+    </form>
+    
+</body>
+</html>

@@ -4,7 +4,7 @@
    background-position: center; /*  Center the image */
   background-repeat: no-repeat; /*  Prevent tiling */
    min-height: 90vh;          /*   Full screen height */
-   padding-top: 70px;          /*   Push content below the fixed navbar */
+    padding-top: 69px;        /*    Push content below the fixed navbar */
 }
 
 
@@ -103,7 +103,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* keeps navbar on top */
+  z-index: 500; /* keeps navbar on top */
 }
 body {
   padding-top: 70px; /* adjust based on navbar height */
