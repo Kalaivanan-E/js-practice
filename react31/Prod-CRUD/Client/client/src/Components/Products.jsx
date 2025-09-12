@@ -12,20 +12,23 @@ const Products = () => {
     <div>
     
       {/* <pre> {JSON.stringify(products)}</pre> */}
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
         {
           products.length > 0? <>
             {
-              products.map((prod)=>{
+              products.map((product)=>{
                 return <div className="col-3">
                   <div className="card">
-                    <div className="card-header"></div>
+                    <div className="card-header">
+                      <img src={product.image} alt="" />
+                    </div>
                     <div className="card-body">
                       <ul className='list-group'>
-                        <li className='list-group-item'>{prod.name}</li>
-                        <li className='list-group-item'>{prod.price}</li>
-                        <li className='list-group-item'><button className='btn btn-warning'> Add to Cart</button> <button className='btn btn-warning' style={{marginLeft:'20px'}}>Delete</button></li>
+                        <li className='list-group-item'>{product.name}</li>
+                        <li className='list-group-item'>{product.price}</li>
+                        <li className='list-group-item'>{product.qty}</li>
+                        <li className='list-group-item'><button className='btn btn-warning mt-3'> Add to Cart</button></li>
                       </ul>
                     </div>
                   </div>

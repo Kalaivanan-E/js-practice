@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import {Home} from '../src/Components/Home.jsx'
 import Products from '../src/Components/Products.jsx';
-import {Admin} from '../src/Components/Admin.jsx'
-import { CreateProduct } from "./Components/CreateProduct.jsx";
+import Admin from '../src/Components/Admin.jsx'
+import  CreateProduct  from "./Components/CreateProduct.jsx";
 
 
 function App() {

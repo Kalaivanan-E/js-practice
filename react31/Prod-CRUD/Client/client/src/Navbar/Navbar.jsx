@@ -6,9 +6,9 @@ let Navbar = ()=>{
   return <div> 
     
     <nav className='navbar navbar-dark bg-dark navbar expand-lg'>
-    <NavLink to ='/' className='navbar-brand'>  Logo</NavLink>
+    <NavLink to ='/' className='navbar-brand' style={{flex:0.4,textAlign:'center',fontSize:'30px',fontFamily:'sans-serif',fontWeight:'bold'}}>  Logo</NavLink>
     <div className=' ml-auto'>
-      <ul className='navbar nav'>
+      <ul className='navbar nav' style={{display:'flex',flex:'0.6',textAlign:'center'}}>
         <li><NavLink to = '/index' className='nav-link'>  Home</NavLink></li>
         <li><NavLink to = '/products' className='nav-link'> Products</NavLink></li>
         <li><NavLink to = '/admin' className='nav-link'> Admin</NavLink></li>
