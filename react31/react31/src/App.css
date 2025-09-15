@@ -43,6 +43,10 @@
     font-size: 20px;
 }
 #menu{
+    display: flex;
+    flex: 0.4;
+    text-align: center;
+    column-gap: 30px;
     font-size: 20px;
     color: black;
     margin-right: 10px;
@@ -100,13 +104,16 @@
 }
 #navbar {
   position: fixed;
+  background-color: rgb(60, 92, 222);
+  border-radius: 5px;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 500; /* keeps navbar on top */
+  z-index: 500; 
+  margin-top: 0 !important;
 }
 body {
-  padding-top: 70px; /* adjust based on navbar height */
+  padding-top: 70px; 
 }
 input[type="submit"]{
     margin-top: 20px;
