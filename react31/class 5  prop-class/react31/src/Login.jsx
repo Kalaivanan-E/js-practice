@@ -1,43 +1,24 @@
-
-
-
-
-
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 
 const Login = () => {
-    let [terms, setTerms] = useState({ status: false })
     let btnRef = useRef()
-    let tcHandler = (event)=>{
-        console.log(event.target.checked)
-        setTerms(event.target.checked)
-        btnRef.current.disabled = ! event.target.checked;
+    let acceptTc = (event)=>{
+        let flag = event.target.checked;
+        console.log(flag)
+        btnRef.current.disabled = ! flag
     }
 
 
   return (
-    <div className='container'>
-        <pre>{JSON.stringify(terms)}</pre>
-        <div className="row">
-            <div className="col-6">
-                <form className='border mt-5' style={{padding:'20px',borderRadius:'5px'}}>
-                    <div className="form-group">
-                        <label > Email:</label>
-                        <input type="email" className='form-control' />
-                    </div>
-                    <div className="form-group">
-                        <label > PassWord:</label>
-                        <input type="password" className='form-control'/>
-                    </div>
-                    <div className="form-group">
-                        <input onInput={tcHandler} type="checkbox"/>
-                    </div>
-                    <input ref={btnRef} type="submit" value='Login' disabled className='btn btn-warning'  />
-                </form>
-            </div>
-        </div>
+    <div>
+        <form>
+            Email: <input type="email" /> <br />
+            Password: <input type="password" /><br />
+            <input type="checkbox" onInput={acceptTc} /> Please accept T&C <br />
+            <input type="submit" value='login' disabled  ref={btnRef} />
+        </form>
     </div>
   )
 }
 
-export default Login
+export default Login;       
