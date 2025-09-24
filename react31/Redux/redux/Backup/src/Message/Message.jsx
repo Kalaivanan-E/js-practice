@@ -13,8 +13,8 @@ const Message = () => {
   return (
     <div>
     
-        <h2>Message component</h2>
-        {/* <pre>message component</pre> */}
+        {/* <h2>Message component</h2> */}
+        <pre>message component</pre>
         <pre>{JSON.stringify(message)}</pre>
 
         <button onClick={gmHandler}>Gm</button>

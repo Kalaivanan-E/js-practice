@@ -1,0 +1,22 @@
+
+What is components 
+
+
+1) what is Redux Action? 
+ 
+ Action is a function & it return actionable object.
+
+ 
+
+2) what is Redux Reducer?
+
+ *Reducer is a pure function, it takes two arguments 1) Action. 2) Initial state.
+ *Based on action type reducer will create /update store data
+
+3) what is store?
+
+  Store is a collection of state.
+
+4) how to dispatch action?
+ 
+   using useDispatch() hooks 
