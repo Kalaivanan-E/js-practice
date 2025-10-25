@@ -19,7 +19,7 @@ else{
     console.log('Empty Array')
 }
 
-// object
+object
 
 let prod_data = {
     "product": [],
