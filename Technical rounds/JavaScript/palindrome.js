@@ -11,4 +11,4 @@ function isPalindrome(str){
     return str === reversed
 
 }
-console.log(isPalindrome("GFG"));
+console.log(isPalindrome("madams"));
