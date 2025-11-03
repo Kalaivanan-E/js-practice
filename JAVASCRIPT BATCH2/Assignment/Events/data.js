@@ -27,7 +27,7 @@ function display6(){
 }
 
 function password(){
-    let enteredtext= document.getElementsByClassName("login").value
+    let enteredtext= document.getElementById("login").value
     let pass = "password"
    if(enteredtext == pass){
     alert('login succues')
