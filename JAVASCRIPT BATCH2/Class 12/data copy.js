@@ -104,27 +104,12 @@ let employees=[{"eid":1,"ename":"Enriqueta","gender":"Polygender"},
     // 2) with help of tag reference we getting <tbody> tag
 let display=()=>{
     let row ='';
-    let Male_employees = 0;
-    let Female_employees = 0;
-    let Other = 0
     for (let emp of employees){
-        if(emp.gender === "Male"){
-        Male_employees++
-        }
-        else if(emp.gender === "Female"){
-            Female_employees ++
-        }
-        else{
-            Other++
-        }
         row = row+ `<tr>
                     <td>${emp.eid}</td>
                     <td>${emp.ename}</td>
                     <td>${emp.gender}</td>
                     </tr>`
-        }
-    
+    }
     document.getElementsByTagName('tbody')[0].innerHTML = row
-    document.getElementById("male_emp").innerHTML =  `Total NO of Male employess ${Male_employees}`
-    document.getElementById("female_emp").innerHTML =  `Total NO of Female employess ${Female_employees}`
 }
