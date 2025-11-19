@@ -22,12 +22,8 @@ class Testone{
     // write a program to check the given number is positive or negative
     public void m3(){
         int num3 = -1;
-        if(num3 >= 0){
-            System.out.println("The given number is positive number");
-        }
-        else{
-            System.out.println("The given number is negative number");
-        }
+       String result =(num3 >=0)?"The given number is positive": "the given number is negative";
+       System.out.println(result);
     }
     public static void main(String[] args) {
         Testone a = new Testone();
