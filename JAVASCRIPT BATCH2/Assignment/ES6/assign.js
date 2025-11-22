@@ -21,6 +21,8 @@ let cars=[
  { "brand": "MG", "model": "Hector", "price": 1800000, "color": "White" },
  { "brand": "Nissan", "model": "Magnite", "price": 900000, "color": "Silver" }
 ]
+
+
 // 1) Use map() to extract only the car models.
 
 let car_models = cars.map((car)=>{
@@ -86,4 +88,29 @@ console.log(price_check)
 let sort_price = cars.sort((a,b)=> a.price - b.price)
 console.log(sort_price)
 
-//
+// 13. Use template literals to print 'Model costs '.
+
+let car_model = cars.map((car)=>{
+    console.log(`Model : ${car.model}, price : ${car.price}`)
+})
+// 14. Create a function with default parameters to apply 10% discount if no discount value is passed.
+
+let discount_price = cars.map((car)=>{
+    let discount = 10;
+    return car.price - (car.price *discount)/100
+})
+console.log(discount_price)
+
+//16. Create a new array of cars using map() that adds a new key onRoadPrice = price + 50000.
+
+let onroadprice = cars.map((car)=>{
+    let onRoadPrice = car.price + 50000
+    return onRoadPrice
+})
+console.log(onroadprice)
+
+// 17. Use filter() + map() to get model names of all red-colored cars.
+
+let redcolorcar = cars.filter(car => car.color == 'Red')
+                  cars.map(car =>car.model);
+console.log(redcolorcar)

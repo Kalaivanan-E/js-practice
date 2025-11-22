@@ -1,0 +1,39 @@
+1) Display all employee details
+
+select * from employees;
+
+2)Show only the first name and salary of all employees.
+
+Select fname, esal from employees;
+
+3) List all employees who belong to Bangalore.
+
+Select * from employees where city = "Bangalore";
+
+4)Find employees whose age is greater than 50.
+
+Select * from employees where age>50;
+
+5)List employees earning less than 40,000.
+
+Select * from employees where esal<40000;
+
+6)Find employees whose last name is "Reddy".
+
+select * from employees where lname = "Reddy";
+
+7)Show employees whose salary is between 30,000 and 60,000.
+
+Select * from employees where esal >= 30000 && esal<=60000;
+
+8)List employees who live in either Bangalore or Hyderabad.
+
+Select * from employees where city ="Bangalore" or city = "Hyderabad";
+
+9)Find all employees whose first name starts with the letter ‘A’
+
+select * from employees where fname like'A%';
+
+10)Find employees whose last name ends with the letter ‘i’.
+
+Select * from employees where lname like '%i';

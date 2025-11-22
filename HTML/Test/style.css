@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;  
+    background-color: #f2f2f2;      
+     display: flex;      /*  Makes the body a flexbox (helps center items). */
+     justify-content:center; /*  Centers the form horizontally.  */
+     align-items: center;  /* Centers the form vertically.          */
+     height: 100vh;    /*  Full screen height (vh = viewport height).              */
+}
+.container {
+    background: white;              
+    padding: 25px;      /* Space inside the box.*/           
+    border-radius: 8px;  /*  Rounded corners.*/  
+    width: 300px;       /*  Fixed width for form.*/          
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /*  Light shadow under box. */
+}
+.container h2 {
+    text-align: center;   /*Center the "Login" heading. */          
+    margin-bottom: 20px;   /*Space below heading.*/       
+}
+label {
+    font-weight: bold;            
+}
+input {
+    width: 100%;  /*Input boxes stretch full width.*/                
+    padding: 10px;   /*Inside space (makes input bigger).*/              
+    margin: 10px 0;  /*Space above and below.*/              
+    border: 1px solid #ccc;/*Light border.*/        
+    border-radius: 5px;  /*Slightly rounded corners.*/          
+}
+button {
+    width: 100%;     /*Button takes full width.*/               
+    background: #4CAF50;             
+    padding: 10px;    /*Makes the button bigger.*/              
+    border: none;     /*Removes border lines*/              
+    color: white;                   
+    font-size: 16px;                
+    border-radius: 5px; /*Rounded button.*/            
+    cursor: pointer;    /*Pointer cursor on hover*/            
+}
+button:hover {
+    background: #45a049;            
+}
