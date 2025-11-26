@@ -37,3 +37,310 @@ select * from employees where fname like'A%';
 10)Find employees whose last name ends with the letter ‘i’.
 
 Select * from employees where lname like '%i';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+insert into t1 (id, name, maths, science,english, chemistry) values(101,"John", 70,55,80,95),
+(102,"vijay", 60,45,88,99),(103,"ajith",80,90,90,99),(104,"siva",90,20,30,40),(105,"suriya",80,50,70,90);
+
+
+insert into t1 (id, name, maths, science,english, chemistry) values(106,"russel",90,54,90,94),
+(107,"MSDhoni", 99,99,99,99),(108,"ajith kumar",92,90,95,99),(109,"jadeja",90,66,75,95),(110,"virat",80,70,80,90);
+
+create table t2 (id int, branch varchar(30), city varchar(30), foreign key(id) references t1(id));
+
+insert into t2(id, branch, city) values (101,"CSE","Bangalore"),(101,"ECE","Chennai"),(103,"MECH","Theni"),(104,"EEE","Madurai");
+
+
+insert into t2(id, branch, city) values (104,"CSE","Bangalore"),(105,"ECE","Chennai"),(106,"MECH","Theni"),(107,"EEE","Madurai");
+
+
+1) print the name of person who were more mark in math and bangalore
+
+select t1.name, t1.maths,t2.city from t1 inner join t2 on t1.id = t2.id where city ="Bangalore" order by maths desc limit 1;
+
+2) the average mark in every city
+
+select t2.city, avg(t1.maths + t1.science + t1.english + t1.chemistry) from t1 inner join t2 on t1.id = t2.id group by city;
+
+
+==========================================================================================================================
+
+JOINS: 
+// Creating a student table
+
+CREATE TABLE student(
+sid INT PRIMARY KEY,
+name VARCHAR(32),
+city VARCHAR(32)
+);
+
+// Inserting value in student table
+
+INSERT INTO student(sid,name,city) VALUES
+(1, "Arun", "Chennai"),
+(2, "Priya", "Bangalore"),
+(3, "Manoj", "Hyderabad");
+
+// Courses table
+
+CREATE TABLE courses(
+cid int,
+course_name VARCHAR(30),
+sid int,
+FOREIGN KEY(sid) REFERENCES student(sid)
+);
+
+// Inserting value in course table
+
+INSERT INTO courses (cid, course_name, sid) VALUES
+(101,"Java",1),
+(102,"Python",1),
+(103,"SQL",2),
+(104,"Javascript",3),
+(105,"React",2);
+
+1) list all student with the courses they enrolled in
+
+SELECT * FROM student INNER JOIN courses on student.sid = courses.sid;
+
+2) list all student even if they have no course
+
+SELECT * FROM student LEFT JOIN courses on student.sid = 
+courses.sid;
+
+3) list all courses even if no student enrolled
+
+SELECT * FROM student RIGHT JOIN courses on student.sid = courses.sid;
+
+4) list student name, city and course name
+
+SELECT student.name, student.city, courses.course_name FROM 
+student INNER JOIN courses on student.sid = courses.sid;
+
+5) find student who did not enroll in any course
+
+SELECT * FROM student INNER JOIN courses on student.sid = courses.sid WHERE courses.sid IS NULL;
+
+6) count how many employees are in each department
+
+SELECT student.sid, student.name FROM student LEFT JOIN courses on student.sid = 
+courses.sid GROUP BY student.sid, student.name;
+
+
+
+
+
+========================================================================================================================
+
+FUNCTION & LOGICAL OPERATORS(AND OR NOT BETWEEN IN)
+
+CREATE DATABASE rk_hospital;
+use rk_hospital;
+
+// creating a employees table
+
+CREATE TABLE  employees(
+e_id int PRIMARY KEY auto_increment,
+name VARCHAR(50),
+age INT,
+salary int);
+
+// inserting a values 
+
+INSERT INTO employees (name, age, salary) VALUES 
+("radhi", 40,100000),
+("reena",23,50000),
+("vijay",40,60000),
+("Arjun",30,200000);
+
+// COUNT - FUNCTION
+
+SELECT count(name) FROM employees;
+SELECT count(name) as count FROM employees;
+SELECT count(name) FROM employees WHERE age>25;
+
+// MAX/MIN -FUNCTION
+
+SELECT MAX(salary) as Salary from employees;
+SELECT MIN(salary) FROM employees;
+
+//SUM -FUNCTION
+
+SELECT SUM(salary) as total from employees;
+
+// AVG - FUNCTION
+
+SELECT AVG(age) as average from employees;
+
+// CONCATE - FUNCTION
+
+SELECT concat(name,e_id) from employees;
+
+=============================================================
+
+// LOGICAL OPERATOR;
+
+SELECT * FROM employee WHERE age = 40 and salary <150000;
+
+SELECT * FROM employees WHERE age >70 or salary < 100000;
+
+SELECT * FROM employees WHERE age between 30 and 40;
+
+SELECT * FROM employees WHERE age IN (23,25,40);
+
+==============================================================
+
+// WILD Card Characters - LIKE % _
+
+ALTER TABLE employees add join_date;
+
+UPDATE employees SET join_date = "2023-01-23" WHERE e_id = 1;
+
+UPDATE employees SET join_date = "2024-03-23" WHERE e_id = 2;
+
+// Start with R name
+
+SELECT * FROM employee WHERE name like "R%";
+
+SELECT * FROM employees WHERE name like "%i";
+
+SELECT * FROM employees WHERE join_date like "%23";
+
+SELECT * FROM employees WHERE name like "_eena";
+
+=============================================================
+
+ORDER BY & LIMIT OFFSET
+
+SELECT * FROM employees ORDER BY name asc;
+
+SELECT * FROM employees ORDER BY name desc;
+
+SELECT * FROM employees ORDER BY join_date desc,name;
+
+SELECT * FROM employees ORDER BY salary, join_date desc;
+
+SELECT * FROM employees ORDER BY salary desc limit 3;
+
+// how to print third highest salary
+
+SELECT * FROM employees ORDER BY salary desc limit 2,1;
+
+=============================================================
+
+UNION & UNION ALL
+
+CREATE TABLE bills(
+id int PRIMARY KEY auto_increment,
+name varchar(30),
+amount int);
+
+
+INSERT INTO bills(name,amount) values 
+("arjun",2500),
+("siva",1500),
+("john",1000);
+
+// create expenses table
+
+CREATE TABLE expenses(
+id int PRIMARY KEY auto_increment,
+name VARCHAR(32),
+amount int);
+
+// inserting a values
+
+INSERT INTO expenses (name,amount) VALUES
+("salary", 150000),
+("supplies",100000),
+("electricity bill",100000);
+
+// UNION
+
+SELECT * FROM bills 
+UNION
+SELECT * FROM expenses;
+
+==============================================================
+SELF JOINS
+
+ALTER TABLE employees add column manager_id int;
+
+UPDATE employees set manager_id = 1 where e_id = 1,3;
+
+//SELF JOIN
+
+SELECT * FROM employees a INNER JOIN employees b on a.manager_id = b.e_id;
+
+=============================================================
+
+INDEXS 
+
+CREATE INDEX name_idx on employees(name);
+
+============================================================
+
+SUB QUERIES
+
+SELECT * FROM employees where salary >(SELECT avg(salary) from employees);
+
+// who are all reporting to radhi
+
+SELECT name, salary from employees where
+manager_id = (SELECT e_id from employees where name = "radhi");
+
+// print manager names of employees whose salary is 25000
+
+SELECT name FROM employees WHERE e_id = (SELECT manager_id from employees where salary > 25000);
+
+=========================================================
+
+GROUP BY and HAVING
+
+ALTER TABLE bills add bill_date date;
+
+UPDATE bills set bill_date = '2025-11-23' where id= 3;
+
+SELECT SUM(amount), bill_date from bills group by bill_date;
+
+SELECT count(amount), name from bills group by name;
+
+select avg(amount), name from bills group by name having NOT name = "siva";
+
+
+
+
+
+
+
+
+
