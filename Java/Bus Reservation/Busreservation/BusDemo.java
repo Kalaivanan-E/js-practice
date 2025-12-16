@@ -8,6 +8,7 @@ public class BusDemo {
         Buses.add(new Bus(1, true, 2));
         Buses.add(new Bus(2, false, 50));
         Buses.add(new Bus(3, false, 48));
+        
 
         for(Bus b: Buses){
             b.displayBusInfo();
@@ -23,6 +24,7 @@ public class BusDemo {
             if(booking.isAvailable(bookings,Buses)){
                 bookings.add(booking);
                 System.out.println("your booking is confirmed");
+                System.out.println(booking.toString());
             }else{
                 System.out.println("Sorry. Bus is full. Try another bus or date");
             }

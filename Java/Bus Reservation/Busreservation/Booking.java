@@ -37,4 +37,13 @@ public class Booking {
         }
         return booked<capacity?true:false;
     }
+     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+        return "\nPassenger Details\n" +
+               "------------------\n" +
+               "Name      : " + passengerName + "\n" +
+               "Bus No    : " + busNo + "\n" +
+               "Date      : " + sdf.format(date);
+    }
 }
