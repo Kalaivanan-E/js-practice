@@ -1,7 +1,11 @@
 import java.util.Scanner;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class BusDemo {
+
+    
     public static void main(String[] args) {
         ArrayList <Bus> Buses = new ArrayList<Bus>();
         ArrayList <Booking> bookings = new ArrayList<Booking>();
@@ -24,11 +28,25 @@ public class BusDemo {
             if(booking.isAvailable(bookings,Buses)){
                 bookings.add(booking);
                 System.out.println("your booking is confirmed");
-                System.out.println(booking.toString());
+                showBookedPassengers(booking.busNo, booking.date, bookings);
             }else{
                 System.out.println("Sorry. Bus is full. Try another bus or date");
             }
         }
         }
+    }
+
+    public static void  showBookedPassengers(int busNo, Date date, ArrayList<Booking> bookings){
+        int count =0;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+        System.out.println("/n Passenger booked for bus no: "+ busNo +  " on " + sdf.format(date) );
+        System.out.println("--------------------------------------------------");
+        for(Booking b: bookings){
+            if(b.busNo == busNo && b.date.equals(date)){
+                count++;
+                System.out.println(count + ".  " +b.passengerName);
+            }
+        }
+        System.out.println("Total Passenger booked : "+ count);
     }
 }
