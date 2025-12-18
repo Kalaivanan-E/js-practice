@@ -1,7 +1,6 @@
-import java.util.Scanner;
-import java.util.Date;
+import java.util.*;
+
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 public class BusDemo {
 
@@ -19,10 +18,10 @@ public class BusDemo {
         }
 
         int userOpt = 1;
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         while(userOpt == 1){
         System.out.println("Enter 1 to Book and 2 to exist");
-        userOpt = scanner.nextInt();
+        userOpt = sc.nextInt();
         if(userOpt == 1){
             Booking booking = new Booking();
             if(booking.isAvailable(bookings,Buses)){
