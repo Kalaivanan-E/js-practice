@@ -8,12 +8,13 @@ public class TrainDemo {
         ArrayList<Booking> bookings = new ArrayList<>();
 
         // Add train
-        trains.add(new Train(600028, 3, 10));
+        trains.add(new Train(600028, 50, 10,40));
 
         System.out.println(
             "TrainNo : " + trains.get(0).getTrainNo() +
             " | Total Seats : " + trains.get(0).getTotalSeats() +
-            " | Sleeper Seats : " + trains.get(0).getSleeper()
+            " | Sleeper Seats : " + trains.get(0).getSleeper() +
+            " | Normal Seats  : " + trains.get(0).getnormalSeats()
         );
 
         Scanner sc = new Scanner(System.in);
@@ -34,12 +35,26 @@ public class TrainDemo {
                 if (booking.isAvailable(trains, bookings)) {
                     bookings.add(booking);
                     System.out.println("Booking Confirmed");
+                    System.out.println();
+                    showBookedPassenger(trainNo, bookings);
                 } else {
                     System.out.println("Seats Not Available");
                 }
             }
         }
 
-        sc.close();
+        // sc.close();
+    }
+    public static void showBookedPassenger(int trainNo, ArrayList<Booking> bookings){
+        int count =0;
+        System.out.println("/n Passenger booked for TrainNo :" + trainNo);
+        System.out.println("-----------------------------------------");
+        for(Booking b: bookings){
+            if(b.trainNo == trainNo){
+                count  ++;
+                System.out.println(count + ".  " + b.name );
+            }
+        }
+        System.out.println("Total passenger booked : "+ count);
     }
 }

@@ -5,6 +5,7 @@ public class Booking {
     String name;
     int age;
     String gender;
+    String seats;
     int bookseat;
     int trainNo;
 
@@ -14,24 +15,18 @@ public class Booking {
 
         this.trainNo = trainNo;
 
-        System.out.println("Enter your Name:");
+        System.out.print("Enter your Name:");
         name = sc.next();
 
-        System.out.println("Enter your Age:");
+        System.out.print("Enter your Age:");
         age = sc.nextInt();
 
-        System.out.println("Enter Gender:");
+        System.out.print("Enter Gender:");
         gender = sc.next();
 
-        while(true){
-           System.out.println("Book how many seats:");
-           bookseat = sc.nextInt(); 
-           if(bookseat >0 && bookseat <=2){
-                break;
-           } else{
-                System.out.println("You can book only 1 or 2 seats");
-           }
-        }
+        System.out.print("Sleeper or Seater :");
+        seats = sc.next();
+
        
     }
 

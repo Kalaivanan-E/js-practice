@@ -3,12 +3,14 @@ class Train{
     private int trainNo;
     private int totalSeats;
     private int sleeper;
+    private int normalSeats;
    
     
-    Train(int trainNo, int totalSeats, int sleeper){
+    Train(int trainNo, int totalSeats, int sleeper, int normalSeats){
         this.trainNo = trainNo;
         this.totalSeats = totalSeats;
         this.sleeper = sleeper;
+        this.normalSeats = normalSeats;
     }
     public int getTrainNo() {
         return trainNo;
@@ -27,6 +29,12 @@ class Train{
     }
     public void setSleeper(int availableSeats) {
         this.sleeper = sleeper;
+    }
+    public void setnormalSeats(int normalSeats){
+        this.normalSeats = normalSeats;
+    }
+    public int getnormalSeats(){
+        return normalSeats;
     }
    
     
