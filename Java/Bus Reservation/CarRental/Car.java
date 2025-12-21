@@ -37,4 +37,8 @@ class Car{
     public void rent(){
         isAvailable = false;
     }
+     public void returnCar(){
+        isAvailable = true;
+    }
+
 }

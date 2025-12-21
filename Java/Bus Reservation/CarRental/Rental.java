@@ -22,4 +22,6 @@ class Rental{
     public int getDay(){
         return days;
     }
+
+   
 }
