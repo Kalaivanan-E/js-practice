@@ -27,4 +27,9 @@ class CarRentalSystem{
             System.out.println("Car is not available for rent");
         }
     }
+    public void returnCar(Car car){
+        car.returnCar();
+        Rental rentalToRemove = null;
+        for()
+    }
 }
