@@ -1,6 +1,7 @@
 
 
 // write a program to find divisor or factor of given number
+// Divisor = a number that divides an integer num perfectly
 // example input =6, output = 1,2,3,6
 
 class Test{

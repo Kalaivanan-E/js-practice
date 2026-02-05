@@ -119,3 +119,33 @@ class armstrong{
         }
     }
 }
+
+
+//Sum of Digits of a Number
+
+class sumofdigits{
+    public static void main(String[] args) {
+        int num = 123;
+        int sum =0;
+
+        while(num>0){
+            int digits = num%10;
+            sum = sum+digits;
+            num = num/10;
+        }
+        System.out.println("sum of digits of a number is : " + sum);
+    }
+}
+
+//Swap Two Numbers
+
+class swaptwono{
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+         System.out.println("before swapping a :" + a +" b :"+ b);    
+        a = a +b;
+        b = a-b;
+        a = a-b;
+        System.out.println("After swapping a :" + a +" b :"+ b);
+    }
+}
