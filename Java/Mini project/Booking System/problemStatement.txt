@@ -1,0 +1,16 @@
+
+
+The application requires handling different ticket categories:
+
+confirmed tickets: 6 berths(Lower, Upper, Middle).
+RAC Tickets: 2 berths
+Waiting List Tickets: 2 tickes max.
+Conditions for Booking:
+
+If the passenger is a senior citizen(>60years) or a female, a lower berth should be allocated if available.
+If all berths are full, assign RAC.
+If RAC is full, assign Waiting List.
+If Waiting List exceeds 2 passengers, display "No tickets available".
+Conditions for Cancellation:
+
+On canceling a confirmed ticket, an RAC ticket should move to confirmed, and a waiting list ticket should move to RAC, 
