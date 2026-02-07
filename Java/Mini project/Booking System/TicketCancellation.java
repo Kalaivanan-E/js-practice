@@ -1,9 +1,11 @@
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class TicketCancellation extends TicketBooking {
     private static char preferenceTracker ='\0';
     private static int cancelledSeat = 0;
 
+    private static Map<Integer, Character> removedData = new HashMap<Integer, Character>();
     public static String cancelling(int id){
         for(Passenger passenger : confirmedTicket){
             if(passenger.getId() == id){
@@ -29,6 +31,7 @@ public class TicketCancellation extends TicketBooking {
         if(passenger.getTicketType() == "berth"){
             preferenceTracker =  passenger.getPreference();
             cancelledSeat =  passenger.getSeatNumber();
+            removedData.put(cancelledSeat, preferenceTracker);
             deleteFromAllList(passenger);
             addRacToBerth(racList.poll());
             addWaitingToRac(waitList.poll());
@@ -47,6 +50,7 @@ public class TicketCancellation extends TicketBooking {
                 lowerList.add(passenger);
             }
             confirmedTicket.add(passenger);
+            removedData.remove(cancelledSeat);
             preferenceTracker = '\0';
             cancelledSeat =0;
         }
@@ -62,6 +66,10 @@ public class TicketCancellation extends TicketBooking {
         upperList.remove(passenger);
         middleList.remove(passenger);
         lowerList.remove(passenger);
+    }
+
+    public static Map<Integer, Character> getRemovedData(){
+        return removedData;
     }
     
 }

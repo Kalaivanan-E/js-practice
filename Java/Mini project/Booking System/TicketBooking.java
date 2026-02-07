@@ -34,7 +34,6 @@ public class TicketBooking {
        
         
         else if(checkAvailability(passenger)){
-            char originalPreference = passenger.getPreference();
             if(passenger.getAge()>=60 || passenger.getGender() == 'F'){
             passenger.setPreference('L');
         }
@@ -63,8 +62,12 @@ public class TicketBooking {
         }return false;
     }
     public static  boolean checkAvailability(Passenger passenger){
+        Map<Integer, Character> map = TicketCancellation.getRemovedData();
         if(passenger.getPreference()== 'U'){
             if(upperList.size() < berthLimit){
+                if(!map.isEmpty()){
+                    getSeatDetails(map,passenger);
+                }
                 passenger.setSeatNumber(upperSeatNumber);
                 upperSeatNumber+=3;
             }
@@ -112,6 +115,9 @@ public class TicketBooking {
             System.out.println(passenger.toString());
         }
         System.out.println("************************************************************");
+    }
+    public static void getSeatDetails(Map<Integer,Character> map, Passenger passenger){
+        
     }
     
 }
