@@ -2,9 +2,9 @@ import java.util.*;
 
 public class TicketBooking {
 
-    private static int berthLimit = 2;
-    private static int racLimit = 2;
-    private static int waitingLimit = 2;
+    private static int berthLimit = 1;
+    private static int racLimit = 1;
+    private static int waitingLimit = 1;
 
     private static int upperSeatNumber = 1;
     private static int middleSeatNumber = 2;
@@ -31,9 +31,21 @@ public class TicketBooking {
                 System.out.println("No tickets available...");
             }
         }
-        char originalPreference = passenger.getPreference();
-        if(passenger.getAge()>=60 || passenger.getGender() == 'F'){
+       
+        
+        else if(checkAvailability(passenger)){
+            char originalPreference = passenger.getPreference();
+            if(passenger.getAge()>=60 || passenger.getGender() == 'F'){
             passenger.setPreference('L');
+        }
+            System.out.println("Ticket Confirmed \n your ticket number : " + passenger.getId());
+            passenger.setTicketType("Berth");
+            confirmedTicket.add(passenger);
+        }
+        else{
+            System.out.println(passenger.getPreference() + " is not available currently ");
+            passenger.setId(passenger.getId()-1);
+            availableList();
         }
     }
     public static boolean updateWaitingQueue(Passenger passenger){
@@ -49,6 +61,57 @@ public class TicketBooking {
             racList.add(passenger);
             return true;
         }return false;
+    }
+    public static  boolean checkAvailability(Passenger passenger){
+        if(passenger.getPreference()== 'U'){
+            if(upperList.size() < berthLimit){
+                passenger.setSeatNumber(upperSeatNumber);
+                upperSeatNumber+=3;
+            }
+            upperList.add(passenger);
+            return true; 
+        } else if(passenger.getPreference() == 'M'){
+            if(middleList.size() < berthLimit){
+                passenger.setSeatNumber(middleSeatNumber);
+                middleSeatNumber+=3;
+            }
+            middleList.add(passenger);
+            return true; 
+        }else{
+            if(lowerList.size()< berthLimit){
+                passenger.setSeatNumber(lowerSeatNumber);
+                lowerSeatNumber +=3;
+            }
+            lowerList.add(passenger);
+            return true;
+        }
+    }
+    public static void availableList(){
+        System.out.println("Check out the number of seat available");
+        System.out.println("Upper berth " + (berthLimit-upperList.size()));
+        System.out.println("Middle berth " + (berthLimit-middleList.size()));
+        System.out.println("Lower berth " + (berthLimit-lowerList.size()));
+    }
+    public static void displayConfirmed(){
+        System.out.println("************************************************************");
+        for(Passenger passenger: confirmedTicket){
+            System.out.println(passenger.toString());
+        }
+        System.out.println("************************************************************");
+    }
+    public static void displayRac(){
+        System.out.println("************************************************************");
+        for(Passenger passenger: racList){
+            System.out.println(passenger.toString());
+        }
+        System.out.println("************************************************************");
+    }
+    public static void displayWaitList(){
+        System.out.println("************************************************************");
+        for(Passenger passenger: waitList){
+            System.out.println(passenger.toString());
+        }
+        System.out.println("************************************************************");
     }
     
 }
