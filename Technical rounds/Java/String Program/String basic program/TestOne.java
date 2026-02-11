@@ -107,3 +107,7 @@ class Test7{
         }
     }
 }
+
+// 8) input = kalaivanan
+//    output = KAlaIVanAN
+

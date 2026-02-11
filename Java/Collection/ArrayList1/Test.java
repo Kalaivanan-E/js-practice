@@ -33,7 +33,7 @@ class arrayList{
 
 class arrlist2{
     public static void main(String[] args) {
-        ArrayList a2 = new ArrayList();
+        ArrayList  a2 = new ArrayList();
         a2.add(100);
         a2.add('a');
         a2.add(200);
