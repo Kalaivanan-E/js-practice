@@ -65,7 +65,7 @@ class Question5{
     static int i;
     public static void main(String[] args) {
         int i;
-        System.out.println(i);  // here it will take local variable & it must initialized
+        // System.out.println(i);// here it will take local variable & it must initialized
     }
 }
 
