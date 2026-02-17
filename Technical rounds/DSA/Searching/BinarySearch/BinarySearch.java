@@ -1,8 +1,8 @@
 
 
-// binary searching is a searching algorthim used only if the array is sorted.
-// it works by dividing the search space into two half and comparing the middle element with the 
-//   target.
+// binary searching =>  is a searching algorthim used only if the array is sorted.
+//  it works by dividing the search space into two half and comparing the middle element with the 
+//  target.
 
 public class BinarySearch {
 
